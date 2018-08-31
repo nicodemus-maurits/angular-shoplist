@@ -20,7 +20,7 @@
         Atur resep <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Tambah ke daftar belanja</a></li>
+        <li><a style="cursor: pointer" (click)="onAddToShoppingList()">Tambah ke daftar belanja</a></li>
         <li><a href="#">Ubah resep</a></li>
         <li><a href="#">Hapus resep</a></li>
       </ul>
@@ -36,6 +36,11 @@
 
 <div class="row">
   <div class="col-xs-12">
-    Bahan
+    <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let ingredient of recipe.ingredients">
+            {{ingredient.name}} - {{ingredient.amount}}
+        </li>
+    </ul>
   </div>
 </div>
